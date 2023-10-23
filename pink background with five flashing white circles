@@ -1,0 +1,41 @@
+// using the different geometric primitives,
+// extend this sketch! a challenge: get something rotating CCW
+const CANVAS_W = 400;
+const CANVAS_H = 400;
+let currentHue = 100;
+let angle = 0;
+let detailX;
+
+    
+function setup() {
+  createCanvas(CANVAS_W, CANVAS_H);
+  angleMode(DEGREES);
+  rectMode(CENTER);
+  colorMode(HSB);
+}
+function draw() {
+  background('#fae');
+  translate(200,200);
+  rotate(angle);
+  fill('50,80,0.2')
+  strokeWeight (50);
+  stroke(currentHue,50,80,0.2);
+  if ( currentHue > 250) {
+    currentHue = 50;
+ 
+  }
+  circle(50, 0, 300);
+  rotate(angle * 0.1);
+  circle(50, 0, 50);
+  rotate(angle * 0.2);
+  circle(75, 0, 20);
+  rotate(angle * 0.3);
+  circle(100, 0, 50);
+  rotate(angle * 0.4);
+  circle(125, 0, 10);
+  rotate(angle * 0.5);
+  circle(150, 0, 50);
+  currentHue = currentHue + 9;
+  angle = angle + 2;
+
+}
